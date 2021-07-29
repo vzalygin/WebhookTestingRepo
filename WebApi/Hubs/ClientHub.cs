@@ -13,7 +13,7 @@ namespace WebApi.Hubs
         public ClientHub(NotifyService notifyService)
         {
             _notifyService = notifyService;
-            _notifyService.Nofity += OnNotify;
+            _notifyService.Notify += OnNotify;
         }
         
         public async Task OnNotify() => 

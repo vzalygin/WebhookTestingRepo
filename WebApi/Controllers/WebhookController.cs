@@ -24,7 +24,7 @@ namespace WebApi.Controllers
         public IActionResult Index([FromBody] PushNotify notify)
         {
             Console.WriteLine(notify.Repository.Name);
-            _notifyService.Nofity();
+            _notifyService.Notify();
             return Ok();
         }
     }

@@ -5,6 +5,6 @@ namespace WebApi.Services
 {
     public class NotifyService
     {
-        public Func<Task> Nofity { get; set; }
+        public Func<Task> Notify { get; set; }
     }
 }
