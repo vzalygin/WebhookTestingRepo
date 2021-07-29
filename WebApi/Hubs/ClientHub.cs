@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR;
-using WebApi.Contracts;
+using Lib.Models;
 
 namespace WebApi.Hubs
 {

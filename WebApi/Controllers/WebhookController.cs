@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
-using WebApi.Contracts;
+using Lib.Models;
 
 namespace WebApi.Controllers
 {

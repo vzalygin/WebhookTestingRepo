@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace WebApi.Contracts
+namespace Lib.Models
 {
     public class Pusher
     {

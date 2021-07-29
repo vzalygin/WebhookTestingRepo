@@ -12,10 +12,9 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using WebApi.Controllers;
 using WebApi.Hubs;
 
-namespace WebApi
+namespace Lib
 {
     public class Startup
     {
