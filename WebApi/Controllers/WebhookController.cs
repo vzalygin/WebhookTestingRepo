@@ -1,17 +1,18 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Lib.Models;
-using WebApi.Services;
+using WebApi.Contracts;
+using WebApi.Hubs;
 
 namespace WebApi.Controllers
 {
     public class WebhookController : ControllerBase
     {
-        private readonly NotifyService _notifyService;
+        private readonly NotifyHub _notifyHub;
 
-        public WebhookController(NotifyService notifyService)
+        public WebhookController(NotifyHub notifyHub)
         {
-            _notifyService = notifyService;
+            _notifyHub = notifyHub;
         }
 
         [HttpGet]
@@ -21,10 +22,10 @@ namespace WebApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index([FromBody] PushNotify notify)
+        public async Task<ActionResult> Index([FromBody] PushNotify notify)
         {
             Console.WriteLine(notify.Repository.Name);
-            _notifyService.Notify();
+            await _notifyHub.OnNotifyAsync();
             return Ok();
         }
     }

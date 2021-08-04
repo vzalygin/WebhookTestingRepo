@@ -1,9 +1,15 @@
 ﻿using Newtonsoft.Json;
 
-namespace Lib.Models
+namespace WebApi.Contracts
 {
-    public class Sender
+    public class Owner
     {
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        [JsonProperty("email")]
+        public string Email { get; set; }
+
         [JsonProperty("login")]
         public string Login { get; set; }
 

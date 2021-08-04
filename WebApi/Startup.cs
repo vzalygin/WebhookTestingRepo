@@ -13,7 +13,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using WebApi.Hubs;
-using WebApi.Services;
 
 namespace WebApi
 {
@@ -30,7 +29,7 @@ namespace WebApi
         {
             services.AddControllers();
             services.AddSignalR();
-            services.AddSingleton<NotifyService>();
+            services.AddSingleton<NotifyHub>();
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "WebApi", Version = "v1"}); });
         }
         
@@ -55,7 +54,7 @@ namespace WebApi
                     new {controller = "webhook", action = "index"}
                 );
 
-                endpoints.MapHub<ClientHub>("/hub");
+                endpoints.MapHub<NotifyHub>("/hub");
             });
         }
     }
